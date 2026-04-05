@@ -4,6 +4,8 @@ import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/footer"
@@ -76,7 +78,7 @@ export default function RootLayout({
         `}</style>
       </head>
       <body className={`font-sans antialiased`}>
-         <Script
+        <Script
           src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"
           strategy="beforeInteractive"
         />
@@ -199,6 +201,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
